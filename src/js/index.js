@@ -1,9 +1,4 @@
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
+import GamePlay from "./models/GamePlay";
 
-context.font = '38pt Arial';
-context.fillStyle = 'cornflowerblue';
-context.strokeStyle = 'blue';
-
-context.fillText('Hello Life', canvas.width/2 - 150 , canvas.height / 2 + 15);
-context.strokeText('Hello Life' , canvas.width/2 - 150 , canvas.height / 2 + 15);
+// start game
+let gameWorld = new GamePlay();
