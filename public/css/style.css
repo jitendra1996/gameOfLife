@@ -3,8 +3,24 @@ body {
 }
 
 #canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     margin: 10px;
     padding: 10px;
     background: #000;
     border: thin solid #aaaaaa;
 }
+
+/*------------- Game Controller Styling -----------------*/
+.gameController__container{
+    position: absolute;
+    background: #aaaaaa;
+    top: 8%;
+    margin: 10px;
+    height: 600px;
+    padding: 10px;
+}
+
+/*------------- Game Controller Styling end -----------------*/

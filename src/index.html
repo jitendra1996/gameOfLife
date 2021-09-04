@@ -8,7 +8,30 @@
     <title>Game Of Life</title>
 </head>
 <body>
-    <canvas id="canvas" width="1475" height="650">
+    <div class="gameController__container">
+        <div class="gameController--startBtn">
+            <button class="startBtn btn" id="startBtn">Play</button>
+        </div>
+        <div class="gameController--stopBtn">
+            <button class="stopBtn btn" id="stopBtn">Stop</button>
+        </div>
+        <div class="gameController--increaseSpeedBtn">
+            <button class="increaseSpeedBtn btn" id="increaseSpeed">move fast</button>
+        </div>
+        <div class="gameController--decreaseSpeedBtn">
+            <button class="decreaseSpeedBtn btn" id="decreaseSpeedBtn">move slow</button>
+        </div>
+        <div class="gameController--incrementGridSize">
+            <button class="incrementGridSize btn" id="incrementGridSize">increase grid size</button>
+        </div>
+        <div class="gameController--decrementGridSize">
+            <button class="decrementGridSize btn" id="decrementGridSize">decrease grid size</button>
+        </div>
+        <div class="gameController--randomSelectingGrid">
+            <button class="randomSelectingGrid btn" id="randomSelectingGrid">random grid</button>
+        </div>
+    </div>
+    <canvas id="canvas" width="1000" height="600">
         canvas not Supported!
     </canvas>
 </body>
