@@ -16,11 +16,61 @@ body {
 /*------------- Game Controller Styling -----------------*/
 .gameController__container{
     position: absolute;
-    background: #aaaaaa;
+    /* background: #aaaaaa; */
+    top: 8%;
+    left: 2%;
+    margin: 10px;
+    height: 600px;
+    padding: 10px;
+    width: 10%;
+    text-align: center;
+}
+
+.btn{
+    cursor: pointer;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    background: transparent;
+    color: cornflowerblue;
+    font-weight: 800;
+    font-size: 16px;
+    border: 1px solid cornflowerblue;
+    text-align: center;
+    transition: all .1s;
+}
+
+.btn:hover{
+    box-shadow: 0 0 20px cornflowerblue;
+    border: 5px solid cornflowerblue;
+    transform: scale(1.1);
+}
+
+.btn:active{
+    transform: scale(0.9);
+}
+
+.incrementGridSize{
+    font-size: 60px;
+}
+
+.decrementGridSize{
+    font-size: 60px;
+}
+/*------------- Game Controller Styling end -----------------*/
+/*----------------------- Game status -----------------------*/
+.rightGameController__container{
+    /* background: #aaaaaa; */
+    position: absolute;
+    right: 2%;
     top: 8%;
     margin: 10px;
     height: 600px;
     padding: 10px;
+    width: 10%;
+    text-align: center;
 }
-
-/*------------- Game Controller Styling end -----------------*/
+/*----------------------- Game status end-----------------------*/
