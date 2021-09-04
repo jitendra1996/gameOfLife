@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: #000000;
 }
@@ -7,17 +15,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    margin: 10px;
+    margin-top: 30px;
     padding: 10px;
     background: #000;
-    border: thin solid #aaaaaa;
+    border: thin solid cornflowerblue;
+    box-shadow: 0 0 10px cornflowerblue;
 }
 
 /*------------- Game Controller Styling -----------------*/
 .gameController__container{
     position: absolute;
     /* background: #aaaaaa; */
-    top: 8%;
+    top: 15%;
     left: 2%;
     margin: 10px;
     height: 600px;
@@ -66,7 +75,7 @@ body {
     /* background: #aaaaaa; */
     position: absolute;
     right: 2%;
-    top: 8%;
+    top: 15%;
     margin: 10px;
     height: 600px;
     padding: 10px;
@@ -74,3 +83,17 @@ body {
     text-align: center;
 }
 /*----------------------- Game status end-----------------------*/
+.gameHeading{
+    color: black;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: 900;
+    text-shadow: 0 0 10px cornflowerblue;
+    width: fit-content;
+    position: absolute;
+    top: 5%;
+    left:50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+}

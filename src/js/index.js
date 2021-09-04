@@ -117,10 +117,24 @@ elements.randomlySelectingGridBtn.addEventListener("click", (e) => {
 });
 
 
+let i = 0;
+let txt = 'Game Of Life';
+let speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    elements.headingTxt.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.addEventListener('load', typeWriter);
+
 // console.log(GamePlay.GAME_STATUS);
 
 // //gameObject values
-let objectArr = gameWorld.getGameObject();
+//let objectArr = gameWorld.getGameObject();
 // // console.log(objectArr);
 // // console.log(objectArr[0]);
 // // console.log(objectArr[0].alive);

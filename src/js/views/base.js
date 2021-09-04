@@ -6,5 +6,6 @@ export const elements = {
     speedDownBtn : document.getElementById('decreaseSpeedBtn'),
     incrementGridSizeBtn : document.getElementById('incrementGridSize'),
     decrementGridSizeBtn : document.getElementById('decrementGridSize'),
-    randomlySelectingGridBtn : document.getElementById('randomSelectingGrid')
+    randomlySelectingGridBtn : document.getElementById('randomSelectingGrid'),
+    headingTxt : document.getElementById("heading")
 }
