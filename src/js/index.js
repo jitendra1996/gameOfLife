@@ -113,6 +113,8 @@ elements.randomlySelectingGridBtn.addEventListener("click", (e) => {
     console.log(objectArr[randomLocation].alive);
     console.log(objectArr.length);
   
+  }else{
+    alert('Please start game');
   }
 });
 
