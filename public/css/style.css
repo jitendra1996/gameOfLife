@@ -20,9 +20,10 @@ body {
     background: #000;
     border: thin solid cornflowerblue;
     box-shadow: 0 0 10px cornflowerblue;
+    overflow: visible;
 }
 
-/*------------- Game Controller Styling -----------------*/
+/*-------------left Game Controller Styling -----------------*/
 .gameController__container{
     position: absolute;
     /* background: #aaaaaa; */
@@ -69,8 +70,8 @@ body {
 .decrementGridSize{
     font-size: 60px;
 }
-/*------------- Game Controller Styling end -----------------*/
-/*----------------------- Game status -----------------------*/
+/*-------------left Game Controller Styling end -----------------*/
+/*-----------------------right Game Controller Styling -----------------------*/
 .rightGameController__container{
     /* background: #aaaaaa; */
     position: absolute;
@@ -82,7 +83,68 @@ body {
     width: 10%;
     text-align: center;
 }
-/*----------------------- Game status end-----------------------*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number]:focus{
+    box-shadow: 0 0 20px cornflowerblue;
+    border: 5px solid cornflowerblue;
+}
+
+.changeGridSize{
+    background: transparent;
+    color: cornflowerblue;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    border: 5px solid cornflowerblue;
+    outline: none;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+label{
+    color: cornflowerblue;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+
+.notify{
+    color: cornflowerblue;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    position: absolute;
+    background: #fff;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    top: 0%;
+    right: 60%;
+    z-index: 10;
+    padding: 10px 10px 25px 10px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    visibility: hidden;
+}
+
+/*-----------------------right Game controller Styling end -----------------------*/
+/*--------------------------- game status ----------------------------*/
+.game__status{
+    color: cornflowerblue;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.game__status ul{
+    list-style: none;
+}
+/*------------------------ game status end --------------------------*/
 .gameHeading{
     color: black;
     text-transform: uppercase;

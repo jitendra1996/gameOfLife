@@ -1,5 +1,4 @@
 export default class CellView {
-
   static width = 10 ;
   static height = 10 ;
 
@@ -18,6 +17,16 @@ export default class CellView {
     this.context.fillRect(
       this.xPoint * CellView.width,
       this.yPoint * CellView.height,
+      CellView.width,
+      CellView.height
+    );
+  }
+
+  static drawNewSquare(x,y) {
+    this.context.fillStyle = '#8a2be2';
+    this.context.fillRect(
+      x,
+      y,
       CellView.width,
       CellView.height
     );

@@ -13,25 +13,33 @@
         <div class="gameController--startBtn">
             <button class="startBtn btn" id="startBtn">Play</button>
         </div>
-        <div class="gameController--stopBtn">
+        <!-- <div class="gameController--stopBtn">
             <button class="stopBtn btn" id="stopBtn">Pause</button>
-        </div>
+        </div> -->
         <div class="gameController--increaseSpeedBtn">
             <button class="increaseSpeedBtn btn" id="increaseSpeed">move fast</button>
         </div>
-        <div class="gameController--decreaseSpeedBtn">
+        <!-- <div class="gameController--decreaseSpeedBtn">
             <button class="decreaseSpeedBtn btn" id="decreaseSpeedBtn">move slow</button>
-        </div>
+        </div> -->
+        <!-- <div class="gameController--randomSelectingGrid">
+            <button class="randomSelectingGrid btn" id="randomSelectingGrid">random grid</button>
+        </div> -->
     </div>
     <div class="rightGameController__container">
-        <div class="gameController--incrementGridSize">
+        <!-- <div class="gameController--incrementGridSize">
             <button class="incrementGridSize btn" id="incrementGridSize">+</button>
         </div>
         <div class="gameController--decrementGridSize">
             <button class="decrementGridSize btn" id="decrementGridSize">-</button>
-        </div>
-        <div class="gameController--randomSelectingGrid">
-            <button class="randomSelectingGrid btn" id="randomSelectingGrid">random grid</button>
+        </div> -->
+        <div class="gameController--input">
+            <form action="" method="POST">
+                <label for="changeGridSize">change grid size</label>
+                <input type="number" name="changeGridSize" id="changeGridSize" class="changeGridSize">
+                <button type="button" id="sizeHandlerBtn" class="btn">change Size</button>
+            </form>
+            <p class="notify" id="notify"></p>
         </div>
     </div>
     <canvas id="canvas" width="1000" height="600">

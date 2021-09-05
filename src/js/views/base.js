@@ -7,5 +7,8 @@ export const elements = {
     incrementGridSizeBtn : document.getElementById('incrementGridSize'),
     decrementGridSizeBtn : document.getElementById('decrementGridSize'),
     randomlySelectingGridBtn : document.getElementById('randomSelectingGrid'),
-    headingTxt : document.getElementById("heading")
+    headingTxt : document.getElementById("heading"),
+    inputFieldHandler : document.getElementById('changeGridSize'),
+    notify : document.getElementById('notify'),
+    btn : document.getElementById('sizeHandlerBtn') 
 }

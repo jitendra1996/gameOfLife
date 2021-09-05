@@ -101,7 +101,7 @@ export default class GamePlay {
 
   drawGameObjects(){
     for (let i = 0; i < this.gameObjects.length; i++) {
-      this.gameObjects[i].drawSquare();
+        this.gameObjects[i].drawSquare();
     }    
   }
 }
