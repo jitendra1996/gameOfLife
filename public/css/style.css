@@ -130,6 +130,15 @@ label{
     height: fit-content;
     text-align: center;
     visibility: hidden;
+    opacity: 0.8;
+}
+
+.gridLocation{
+    color: cornflowerblue;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: 10px;
 }
 
 /*-----------------------right Game controller Styling end -----------------------*/

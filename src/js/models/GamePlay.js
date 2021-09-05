@@ -1,12 +1,12 @@
 import CellView from "../views/cellView";
 
 export default class GamePlay {
-
-  static RATE_OF_FRAME = 1000 ;
-  static GAME_STATUS = false ;
+  static RATE_OF_FRAME = 1000;
+  static GAME_STATUS = false;
+  static RANDOM_LOCATION = -1 ;
 
   constructor(canvasId) {
-    this.canvasId = canvasId ;
+    this.canvasId = canvasId;
     this.context = this.canvasId.getContext("2d");
     this.cols = this.canvasId.width;
     this.rows = this.canvasId.height;
@@ -15,7 +15,7 @@ export default class GamePlay {
     this.createGrid();
   }
 
-  gamePlay(){    
+  gamePlay() {
     window.requestAnimationFrame(() => this.gameLoop());
   }
 
@@ -75,22 +75,21 @@ export default class GamePlay {
   }
 
   gameLoop() {
-    if(GamePlay.GAME_STATUS){
+    if (GamePlay.GAME_STATUS) {
       // Check the surrounding of each cell
       this.checkNeighbours();
-  
+
       // Clear the screen
       this.context.clearRect(0, 0, this.canvasId.width, this.canvasId.height);
-  
+
       // Draw all the gameobjects
       this.drawGameObjects();
-  
-      //requesting new frames
-        setTimeout(() => {
-          window.requestAnimationFrame(() => this.gameLoop());
-        }, GamePlay.RATE_OF_FRAME);
 
-    }else{
+      //requesting new frames
+      setTimeout(() => {
+        window.requestAnimationFrame(() => this.gameLoop());
+      }, GamePlay.RATE_OF_FRAME);
+    } else {
       this.drawGameObjects();
     }
   }
@@ -99,9 +98,14 @@ export default class GamePlay {
     return this.gameObjects;
   }
 
-  drawGameObjects(){
+  drawGameObjects() {
     for (let i = 0; i < this.gameObjects.length; i++) {
+      if(i === GamePlay.RANDOM_LOCATION){
+        this.gameObjects[i].drawNewSquare();
+        GamePlay.RANDOM_LOCATION = -1 ;
+      }else{
         this.gameObjects[i].drawSquare();
-    }    
+      }
+    }
   }
 }

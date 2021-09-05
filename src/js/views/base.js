@@ -10,5 +10,6 @@ export const elements = {
     headingTxt : document.getElementById("heading"),
     inputFieldHandler : document.getElementById('changeGridSize'),
     notify : document.getElementById('notify'),
-    btn : document.getElementById('sizeHandlerBtn') 
+    btn : document.getElementById('sizeHandlerBtn'),
+    gridLocation : document.getElementById('gridLocation') 
 }

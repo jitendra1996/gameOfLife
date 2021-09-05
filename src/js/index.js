@@ -3,17 +3,19 @@ import { elements } from "./views/base";
 import CellView from "./views/cellView";
 
 let GAME_RUNNING_STATUS = false;
-let GRID_SIZE = 10;
 let REACH_MAX_LIMIT = false;
-// CellView.setSize(40);
-// console.log(CellView.getSize());
+
 // start game
 let gameWorld = new GamePlay(elements.canvas);
+let GAME_OBJECTS = gameWorld.gameObjects;
 
+//console.log(GAME_OBJECTS);
 elements.canvas.addEventListener("click", (e) => {
   //console.log("click on canvas");
   GamePlay.GAME_STATUS = !GamePlay.GAME_STATUS;
   //console.log(GamePlay.GAME_STATUS);
+  gameWorld.gameObjects = GAME_OBJECTS;
+  elements.gridLocation.textContent = '';
   if (GamePlay.GAME_STATUS && !GAME_RUNNING_STATUS) {
     gameWorld.gamePlay();
     GAME_RUNNING_STATUS = true;
@@ -29,6 +31,8 @@ elements.playBtn.addEventListener("click", (e) => {
   //console.log("clicked play btn");
   GamePlay.GAME_STATUS = true;
   //console.log(GamePlay.GAME_STATUS);
+  gameWorld.gameObjects = GAME_OBJECTS;
+  elements.gridLocation.textContent='';
   if (GamePlay.GAME_STATUS && !GAME_RUNNING_STATUS) {
     gameWorld.gamePlay();
     GAME_RUNNING_STATUS = true;
@@ -97,6 +101,42 @@ function typeWriter() {
 
 window.addEventListener("load", typeWriter);
 
+//Randomly selecting Alive grid
+elements.randomlySelectingGridBtn.addEventListener("click", (e) => {
+  //console.log("clicked randomly selecting grid btn");
+  if (GamePlay.GAME_STATUS) {
+    let objectArr = gameWorld.getGameObject();
+    let randomLocation = Math.floor(Math.random() * objectArr.length);
+    if (objectArr[randomLocation].alive) {
+      let xPoint = objectArr[randomLocation].xPoint;
+      let yPoint = objectArr[randomLocation].yPoint;
+      //console.log(xPoint);
+      //console.log(yPoint);
+      GamePlay.RANDOM_LOCATION = randomLocation;
+      const newArr = objectArr.map((el, cur) => {
+        if (cur === randomLocation) {
+          return new CellView(elements.canvas.getContext("2d"), xPoint, yPoint);
+        } else {
+          return el;
+        }
+      });
+      //console.log(newArr);
+      //console.log(gameWorld.gameObjects);
+      //console.log(GamePlay.RANDOM_LOCATION);
+      gameWorld.gameObjects = newArr;
+      GamePlay.GAME_STATUS = false;
+      GAME_RUNNING_STATUS = false;
+      elements.playBtn.textContent = "Play";
+      //console.log(gameWorld.gameObjects);
+      if (GamePlay.RANDOM_LOCATION > -1) {
+        elements.gridLocation.textContent = `Randomly selected Grid located at ( ${xPoint} , ${yPoint} ).`;
+      }
+    }
+  } else {
+    alert("Please start game");
+  }
+});
+
 //decrease speed of animation frame
 /* elements.speedDownBtn.addEventListener("click", (e) => {
   //console.log("clicked move slow btn");
@@ -147,31 +187,4 @@ elements.decrementGridSizeBtn.addEventListener("click", (e) => {
   //   GamePlay.GAME_STATUS = false;
   //   //console.log(GamePlay.GAME_STATUS);
   // });
-  */
-
-//Randomly selecting Alive grid
-/* elements.randomlySelectingGridBtn.addEventListener("click", (e) => {
-   //console.log("clicked randomly selecting grid btn");
-   if (GamePlay.GAME_STATUS) {
-     let objectArr = gameWorld.getGameObject();
-     let randomLocation = Math.floor(Math.random() * objectArr.length);
-     if (objectArr[randomLocation].alive) {
-       let xPoint = objectArr[randomLocation].xPoint;
-       let yPoint = objectArr[randomLocation].yPoint;
-       console.log(xPoint);
-       console.log(yPoint);
-       const newArr = objectArr.map((el, cur) => {
-         if (cur === randomLocation) {
-           return CellView.drawNewSquare(xPoint, yPoint);
-         } else {
-           return el;
-         }
-       });
-       console.log(newArr);
-       GamePlay.GAME_STATUS = false;
-     }
-   } else {
-     alert("Please start game");
-   }
- });
   */
