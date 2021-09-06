@@ -20,7 +20,7 @@ body {
     background: #000;
     border: thin solid cornflowerblue;
     box-shadow: 0 0 10px cornflowerblue;
-    overflow: visible;
+    /* overflow: visible; */
 }
 
 /*-------------left Game Controller Styling -----------------*/

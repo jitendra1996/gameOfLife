@@ -8,8 +8,8 @@ export default class GamePlay {
   constructor(canvasId) {
     this.canvasId = canvasId;
     this.context = this.canvasId.getContext("2d");
-    this.cols = this.canvasId.width;
-    this.rows = this.canvasId.height;
+    this.cols = Math.floor(this.canvasId.width / CellView.width);
+    this.rows = Math.floor(this.canvasId.height / CellView.height);
 
     this.gameObjects = [];
     this.createGrid();
